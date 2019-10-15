@@ -308,6 +308,7 @@
       const container = document.createElement('div');
       container.lang = "en-US";
       container.className = 'gitment-container gitment-root-container';
+      
       container.appendChild(instance.renderHeader(state, instance));
       container.appendChild(instance.renderEditor(state, instance));
       container.appendChild(instance.renderComments(state, instance));
@@ -316,10 +317,7 @@
     }
   }
 
-  function showGitment() {
-    $("#gitment_title").attr("style", "display:none");
-    $("#container").attr("style", "").addClass("gitment_container");
-    var gitment = new Gitment({
+  const gitment = new Gitment({
       id: decodeURI(window.location.pathname),
       theme: myTheme,
       owner: 'anfei',
@@ -329,10 +327,7 @@
         client_secret: '25f4fc01c378df70629fc031a01557e88c7f5c89'
       }
     });
-    gitment.render('container');
-  }
-
-  showGitment();
+  gitment.render('container');
 </script>
         </div>
           
